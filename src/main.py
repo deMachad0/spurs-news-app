@@ -7,6 +7,11 @@ from flask_cors import CORS
 # Importing the API key stored separately in config.py for security
 from config import API_KEY
 
+from dotenv import load_dotenv
+import os
+
+API_KEY = os.getenv('API_KEY')
+
 # Creating the Flask application instance
 app = Flask(__name__)
 # Applying CORS to the entire app
@@ -52,5 +57,6 @@ def index():
 
 # This ensures the app only runs when we execute this file directly
 # debug=True allows us to see errors in the browser and auto-restarts on changes
+
 if __name__ == "__main__":
     app.run(debug=True)
