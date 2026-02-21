@@ -17,11 +17,11 @@ This directoy uses Python language for coding, Postman to test API calls, HTML f
 
 ## How to run the app
 
-"pip install requests", Install Python, install libraries, run "main.py"
+'pip install requests', Install Python, install libraries, run "main.py"
 
 ## Libraries and Dependencies 
 
-"requests" for API calls
+'requests' for API calls
 
 ### 🗓️ Key Deadlines
 
