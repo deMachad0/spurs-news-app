@@ -17,11 +17,21 @@ This directoy uses Python language for coding, Postman to test API calls, HTML f
 
 ## How to run the app
 
-'pip install requests', Install Python, install libraries, run "main.py"
+1. Clone the repository
+2. Install dependencies: `pip install flask requests flask-cors`
+3. Add your API key to `config.py`
+4. Run the app: `python main.py`
+5. Open your browser at `http://127.0.0.1:5000`
 
 ## Libraries and Dependencies 
 
-'requests' for API calls
+- `Flask` - web framework used to build the app and handle routes
+- `requests` - used to make HTTP calls to the Football_Data.org API
+- `flask-cors` - allows the app to communicate across different domains
+- `python-dotenv` - used to secutely load the API key from config.py
+
+## Project Status
+🟡 In Progress — backend complete, frontend in development
 
 ### 🗓️ Key Deadlines
 
