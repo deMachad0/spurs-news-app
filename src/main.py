@@ -33,7 +33,10 @@ def fetch_news():
     # If the request is successful (status 200), return the data as JSON
     if response.status_code == 200:
         data = response.json()
-        return data
+        matches = data.get('matches', [])
+        # Filter only finished matches and get the last 4
+        finished = [m for m in matches if m['status'] == 'FINISHED']
+        return finished[-4:]
     # If something goes wrong, return None so we can handle the error elsewhere
     else:
         return None
@@ -53,7 +56,9 @@ def get_spurs():
 @app.route('/')
 # Flask looks for spurs_news.html inside the /templates folder
 def index():
-    return render_template('spurs_news.html')
+    # Passing data to HTML template
+    matches = fetch_news() or []
+    return render_template('spurs_news.html', matches=matches)
 
 # This ensures the app only runs when we execute this file directly
 # debug=True allows us to see errors in the browser and auto-restarts on changes

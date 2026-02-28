@@ -1,0 +1,346 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Tottenham Hotspur</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    <section class="team-section">
+      <div class="team-banner">
+        <img
+          src="{{ url_for('static', filename='image/spurs-banner.jpg') }}"
+          alt="Tottenham Hotspur"
+        />
+      </div>
+      <div class="team-title">
+        <h1>Tottenham Hotspur News</h1>
+      </div>
+      <section class="matches-section">
+        <h2>Latest Matches</h2>
+        <div class="matches-container">
+          {% for match in matches %}
+          <div class="match-card">
+            <p class="match-date">{{ match['utcDate'][:10] }}</p>
+            <div class="match-teams">
+              <span>{{ match['homeTeam']['name'] }}</span>
+              <span class="vs"> VS </span>
+              <span>{{ match['awayTeam']['name'] }}</span>
+            </div>
+            <p class="match-status">{{ match['status'] }}</p>
+            {% if match['score']['fullTime']['home'] is not none %}
+            <p class="match-score">
+              {{ match['score']['fullTime']['home'] }} - {{
+              match['score']['fullTime']['away'] }}
+            </p>
+            {% endif %}
+          </div>
+          {% endfor %}
+        </div>
+      </section>
+      <div class="team-cards">
+        <div class="team-card">
+          <div class="team-image">
+            <img
+              src="{{ url_for('static', filename='image/img_one.png') }}"
+              alt="Guglielmo Vicario"
+            />
+          </div>
+          <div class="team-detail"></div>
+          <h3>1 Guglielmo Vicario</h3>
+          <p>GoalKeeper</p>
+        </div>
+        <div class="team-card">
+          <div class="team-image">
+            <img
+              src="{{ url_for('static', filename='image/img_two.png') }}"
+              alt="Radu Dragusin"
+            />
+          </div>
+          <div class="team-detail"></div>
+          <h3>3 Radu Dragusin</h3>
+          <p>Defender</p>
+        </div>
+        <div class="team-card">
+          <div class="team-image">
+            <img
+              src="{{ url_for('static', filename='image/img_three.png') }}"
+              alt="Kevin Danso"
+            />
+          </div>
+          <div class="team-detail"></div>
+          <h3>4 Kevin Danso</h3>
+          <p>Defender</p>
+        </div>
+        <div class="team-card">
+          <div class="team-image">
+            <img
+              src="{{ url_for('static', filename='image/img_four.png') }}"
+              alt="Joao Palhinha"
+            />
+          </div>
+          <div class="team-detail"></div>
+          <h3>6 Joao Palhinha</h3>
+          <p>Midfielder</p>
+        </div>
+        <div class="team-card">
+          <div class="team-image">
+            <img
+              src="{{ url_for('static', filename='image/img_five.png') }}"
+              alt="Xavi Simons"
+            />
+          </div>
+          <div class="team-detail"></div>
+          <h3>7 Xavi Simons</h3>
+          <p>Forward</p>
+        </div>
+        <div class="team-card">
+          <div class="team-image">
+            <img
+              src="{{ url_for('static', filename='image/img_six.png') }}"
+              alt="Yves Bissouma"
+            />
+          </div>
+          <div class="team-detail"></div>
+          <h3>8 Yves Bissouma</h3>
+          <p>Midfielder</p>
+        </div>
+        <div class="team-card">
+          <div class="team-image">
+            <img
+              src="{{ url_for('static', filename='image/img_seven.png') }}"
+              alt="Richarlison"
+            />
+          </div>
+          <div class="team-detail"></div>
+          <h3>9 Richarlison</h3>
+          <p>Forward</p>
+        </div>
+        <div class="team-card">
+          <div class="team-image">
+            <img
+              src="{{ url_for('static', filename='image/img_eight.png') }}"
+              alt="James Maddison"
+            />
+          </div>
+          <div class="team-detail"></div>
+          <h3>10 James Maddison</h3>
+          <p>Midfielder</p>
+        </div>
+        <div class="team-card">
+          <div class="team-image">
+            <img
+              src="{{ url_for('static', filename='image/img_nine.png') }}"
+              alt="Mathys Tel"
+            />
+          </div>
+          <div class="team-detail"></div>
+          <h3>11 Mathys Tel</h3>
+          <p>Forward</p>
+        </div>
+        <div class="team-card">
+          <div class="team-image">
+            <img
+              src="{{ url_for('static', filename='image/img_ten.png') }}"
+              alt="Destiny Udogie"
+            />
+          </div>
+          <div class="team-detail"></div>
+          <h3>13 Destiny Udogie</h3>
+          <p>Defender</p>
+        </div>
+        <div class="team-card">
+          <div class="team-image">
+            <img
+              src="{{ url_for('static', filename='image/img_eleven.png') }}"
+              alt="Archie Gray"
+            />
+          </div>
+          <div class="team-detail"></div>
+          <h3>14 Archie Gray</h3>
+          <p>Midfielder</p>
+        </div>
+        <div class="team-card">
+          <div class="team-image">
+            <img
+              src="{{ url_for('static', filename='image/img_twelve.png') }}"
+              alt="Lucas Bergvall"
+            />
+          </div>
+          <div class="team-detail"></div>
+          <h3>15 Lucas Bergvall</h3>
+          <p>Midfielder</p>
+        </div>
+        <div class="team-card">
+          <div class="team-image">
+            <img
+              src="{{ url_for('static', filename='image/img_thirteen.png') }}"
+              alt="Cristian Romero"
+            />
+          </div>
+          <div class="team-detail"></div>
+          <h3>17 Cristian Romero</h3>
+          <p>Defender</p>
+        </div>
+        <div class="team-card">
+          <div class="team-image">
+            <img
+              src="{{ url_for('static', filename='image/img_fourteen.png') }}"
+              alt="Dominic Solanke"
+            />
+          </div>
+          <div class="team-detail"></div>
+          <h3>19 Dominic Solanke</h3>
+          <p>Forward</p>
+        </div>
+        <div class="team-card">
+          <div class="team-image">
+            <img
+              src="{{ url_for('static', filename='image/img_fifteen.png') }}"
+              alt="Mohammed Kudus"
+            />
+          </div>
+          <div class="team-detail"></div>
+          <h3>20 Mohammed Kudus</h3>
+          <p>Forward</p>
+        </div>
+        <div class="team-card">
+          <div class="team-image">
+            <img
+              src="{{ url_for('static', filename='image/img_sixteen.png') }}"
+              alt="Dejan Kulusevski"
+            />
+          </div>
+          <div class="team-detail"></div>
+          <h3>21 Dejan Kulusevski</h3>
+          <p>Midfielder</p>
+        </div>
+        <div class="team-card">
+          <div class="team-image">
+            <img
+              src="{{ url_for('static', filename='image/img_seventeen.png') }}"
+              alt="Conor Gallagher"
+            />
+          </div>
+          <div class="team-detail"></div>
+          <h3>22 Conor Gallagher</h3>
+          <p>Midfielder</p>
+        </div>
+        <div class="team-card">
+          <div class="team-image">
+            <img
+              src="{{ url_for('static', filename='image/img_eighteen.png') }}"
+              alt="Pedro Porro"
+            />
+          </div>
+          <div class="team-detail"></div>
+          <h3>23 Pedro Porro</h3>
+          <p>Defender</p>
+        </div>
+        <div class="team-card">
+          <div class="team-image">
+            <img
+              src="{{ url_for('static', filename='image/img_nineteen.png') }}"
+              alt="Djed Spence"
+            />
+          </div>
+          <div class="team-detail"></div>
+          <h3>24 Djed Spence</h3>
+          <p>Defender</p>
+        </div>
+        <div class="team-card">
+          <div class="team-image">
+            <img
+              src="{{ url_for('static', filename='image/img_twenty.png') }}"
+              alt="Wilson Odobert"
+            />
+          </div>
+          <div class="team-detail"></div>
+          <h3>28 Wilson Odobert</h3>
+          <p>Forward</p>
+        </div>
+        <div class="team-card">
+          <div class="team-image">
+            <img
+              src="{{ url_for('static', filename='image/img_twenty-one.png') }}"
+              alt="Pape Mattar Sarr"
+            />
+          </div>
+          <div class="team-detail"></div>
+          <h3>29 Pape Mattar Sarr</h3>
+          <p>Midfielder</p>
+        </div>
+        <div class="team-card">
+          <div class="team-image">
+            <img
+              src="{{ url_for('static', filename='image/img_twenty-two.png') }}"
+              alt="Rodrigo Bentancur"
+            />
+          </div>
+          <div class="team-detail"></div>
+          <h3>30 Rodrigo Bentancur</h3>
+          <p>Midfielder</p>
+        </div>
+        <div class="team-card">
+          <div class="team-image">
+            <img
+              src="{{ url_for('static', filename='image/img_twenty-three.png') }}"
+              alt="Antonin Kinsky"
+            />
+          </div>
+          <div class="team-detail"></div>
+          <h3>31 Antonin Kinsky</h3>
+          <p>GoalKeeper</p>
+        </div>
+        <div class="team-card">
+          <div class="team-image">
+            <img
+              src="{{ url_for('static', filename='image/img_twenty-four.png') }}"
+              alt="Ben Davies"
+            />
+          </div>
+          <div class="team-detail"></div>
+          <h3>33 Ben Davies</h3>
+          <p>Defender</p>
+        </div>
+        <div class="team-card">
+          <div class="team-image">
+            <img
+              src="{{ url_for('static', filename='image/img_twenty-five.png') }}"
+              alt="Micky van de Ven"
+            />
+          </div>
+          <div class="team-detail"></div>
+          <h3>37 Micky van de Ven</h3>
+          <p>Defender</p>
+        </div>
+        <div class="team-card">
+          <div class="team-image">
+            <img
+              src="{{ url_for('static', filename='image/img_twenty-six.png') }}"
+              alt="Randal Kolo Muani"
+            />
+          </div>
+          <div class="team-detail"></div>
+          <h3>39 Randal Kolo Muani</h3>
+          <p>Forward</p>
+        </div>
+        <div class="team-card">
+          <div class="team-image">
+            <img
+              src="{{ url_for('static', filename='image/img_twenty-seven.png') }}"
+              alt="Brandon Austin"
+            />
+          </div>
+          <div class="team-detail"></div>
+          <h3>40 Brandon Austin</h3>
+          <p>GoalKeeper</p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
