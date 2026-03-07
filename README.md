@@ -8,7 +8,7 @@ This directory contains all the foundational content, notes, and useful material
 
 ## Step by step
 
-This directory contains all the steps behind an application, APIs (Football-Data.org), Coding
+This directory contains all the steps behind an application, APIs (Football-Data.org, https://newsapi.org), Coding
 
 ## Tools
 
@@ -26,7 +26,7 @@ This directoy uses Python language for coding, Postman to test API calls, HTML f
 ## Libraries and Dependencies 
 
 - `Flask` - web framework used to build the app and handle routes
-- `requests` - used to make HTTP calls to the Football_Data.org API
+- `requests` - used to make HTTP calls to the Football_Data.org API and https://newsapi.org API
 - `flask-cors` - allows the app to communicate across different domains
 - `python-dotenv` - used to secutely load the API key from config.py
 
