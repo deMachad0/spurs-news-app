@@ -50,7 +50,7 @@ def fetch_spurs_news():
     params = {
         'q': 'Tottenham Hotspurs',
         'language':'en',
-        'sortBy':'publishedAT',
+        'sortBy':'publishedAt',
         'pageSize': 10,
         'apiKey': API_KEY2
     }
