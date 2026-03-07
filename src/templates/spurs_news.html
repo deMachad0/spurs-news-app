@@ -18,7 +18,7 @@
         />
       </div>
       <div class="team-title">
-        <h1>Tottenham Hotspur News</h1>
+        <h1>Tottenham Hotspur Score</h1>
       </div>
       <section class="matches-section">
         <h2>Latest Matches</h2>
@@ -41,6 +41,21 @@
           </div>
           {% endfor %}
         </div>
+        </section>
+         <div class="team-title">
+        <h1>Tottenham Hotspur News</h1>
+      </div>
+      <section class="news-section">
+        <div class="news-container">
+          {% for article in articles %}
+          <div class="news-card">
+            <p class="news-date">{{ article['publishedAt'][:10] }}</p>
+            <h3 class="news-title">{{ article['title'] }}</h3>
+            <p class="news-description">{{ article['description'] }}</p>
+            <a href="{{ article['url'] }}" target="_blank" class="news-link">Read More</a>
+          </div>
+          {% endfor %}
+          </div>
       </section>
       <div class="team-cards">
         <div class="team-card">
@@ -329,6 +344,19 @@
           <h3>39 Randal Kolo Muani</h3>
           <p>Forward</p>
         </div>
+         <div class="team-card">
+          <div class="team-image">
+            <img
+              src="{{ url_for('static', filename='image/img_twenty-eight.png') }}"
+              alt="Souza"
+            />
+          </div>
+          <div class="team-detail"></div>
+          <h3>38 Souza</h3>
+          <p>Forward</p>
+        </div>
+        <div class="team-card">
+          <div class="team-image">
         <div class="team-card">
           <div class="team-image">
             <img

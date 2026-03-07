@@ -11,6 +11,7 @@ from dotenv import load_dotenv
 import os
 
 API_KEY = os.getenv('API_KEY')
+API_KEY2 = os.getenv('API_KEY2')
 
 # Creating the Flask application instance
 app = Flask(__name__)
@@ -40,6 +41,27 @@ def fetch_news():
     # If something goes wrong, return None so we can handle the error elsewhere
     else:
         return None
+    
+# This function is responsible for fetching Spurs news data from the API
+def fetch_spurs_news():
+    
+    # Building the URL to request Spurs news specifically
+    url = f"https://newsapi.org/v2/everything"
+    params = {
+        'q': 'Tottenham Hotspurs',
+        'language':'en',
+        'sortBy':'publishedAT',
+        'pageSize': 10,
+        'apiKey': API_KEY2
+    }
+    response = requests.get(url, params=params)
+    # If the request is successful (status 200), return the data as JSON
+    if response.status_code == 200:
+        data = response.json()
+        return data.get('articles', [])
+    # If something goes wrong, return None so we can handle the error elsewhere
+    else:
+        return None
 
 # This route handles GET requests to /spurs and returns the match data as JSON    
 @app.route('/spurs', methods=['GET'])
@@ -58,10 +80,10 @@ def get_spurs():
 def index():
     # Passing data to HTML template
     matches = fetch_news() or []
-    return render_template('spurs_news.html', matches=matches)
+    articles = fetch_spurs_news() or []
+    return render_template('spurs_news.html', matches=matches, articles=articles)
 
 # This ensures the app only runs when we execute this file directly
 # debug=True allows us to see errors in the browser and auto-restarts on changes
-
 if __name__ == "__main__":
     app.run(debug=True)
