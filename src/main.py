@@ -4,8 +4,6 @@ from flask import Flask, jsonify, render_template
 import requests
 # CORS allows our app to communicate with other domains (avoids browser blocking)
 from flask_cors import CORS 
-# Importing the API key stored separately in config.py for security
-from config import API_KEY
 
 from dotenv import load_dotenv
 import os
