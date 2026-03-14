@@ -33,6 +33,9 @@ This directoy uses Python language for coding, Postman to test API calls, HTML f
 ## Project Status
 🟡 In Progress — backend complete, frontend in development
 
+## 🌐 Live Demo
+[View the app here](https://spurs-news-app.onrender.com)
+
 ### 🗓️ Key Deadlines
 
 * Project will be updated weekly
