@@ -86,4 +86,5 @@ def index():
 # This ensures the app only runs when we execute this file directly
 # debug=True allows us to see errors in the browser and auto-restarts on changes
 if __name__ == "__main__":
-    app.run(debug=True)
+    # Host='0.0.0.0' to Render access it
+    app.run(host='0.0.0.0', port=5000, debug=False)
