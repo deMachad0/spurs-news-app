@@ -1,0 +1,21 @@
+{
+    "name": "Spurs News App",
+    "short_name": "SpursApp",
+    "description": "Tottenham Hotspur match results and news",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#01020d",
+    "theme_color": "#060721",
+    "icons": [
+        {
+            "src": "/static/image/spurs-icon.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/static/image/spurs-icon.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

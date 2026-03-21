@@ -1,9 +1,10 @@
-# Importing Flask and the tools we need to build the web app
-from flask import Flask, jsonify, render_template
+# Importing Flask and the tools we need to build the web and app
+from flask import Flask, jsonify, render_template, send_from_directory
 # Requests library allows us to make HTTP calls to external APIs
 import requests
 # CORS allows our app to communicate with other domains (avoids browser blocking)
 from flask_cors import CORS 
+
 
 from dotenv import load_dotenv
 import os
@@ -80,6 +81,12 @@ def index():
     matches = fetch_news() or []
     articles = fetch_spurs_news() or []
     return render_template('spurs_news.html', matches=matches, articles=articles)
+
+# This route loads the homepage into App
+@app.route('/static/service_worker.js')
+# Flask looks for service_worker.js inside the /static folder
+def service_worker():
+    return send_from_directory('static', 'service_worker.js')
 
 # This ensures the app only runs when we execute this file directly
 # debug=True allows us to see errors in the browser and auto-restarts on changes
