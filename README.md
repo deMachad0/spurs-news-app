@@ -12,8 +12,13 @@ This directory contains all the steps behind an application, APIs (Football-Data
 
 ## Tools
 
-This directoy uses Python language for coding, Postman to test API calls, HTML for basic display, CSS to style and clean up appearance.
-
+- Python and Flask for the backend
+- HTML and CSS for the frontend
+- Football-Data.org API for match results
+- NewsAPI for latest Spurs news
+- Deployed on Render
+- Google Analytics for traffic monitoring
+- Version control via GitHub
 
 ## How to run the app
 
@@ -35,6 +40,11 @@ This directoy uses Python language for coding, Postman to test API calls, HTML f
 
 ## 🌐 Live Demo
 [View the app here](https://spurs-news-app.onrender.com)
+
+## 📱 Progressive Web App
+This app can be installed on your phone or desktop directly from the browser.
+- On Android: tap the three dots menu and select "Add to Home Screen"
+- On iPhone: tap the share button and select "Add to Home Screen"
 
 ### 🗓️ Key Deadlines
 
