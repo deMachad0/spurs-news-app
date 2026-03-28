@@ -73,6 +73,24 @@
             <a href="{{ article['url'] }}" target="_blank" class="news-link">Read More</a>
           </div>
           {% endfor %}
+          <div class="team-title">
+    <h1>Premier League Timetable</h1>
+</div>
+<section class="premier-section">
+    <div class="premier-container">
+        {% for match in premier_league %}
+        <div class="premier-card">
+            <p class="match-date">{{ match['utcDate'][:10] }}</p>
+            <div class="match-teams">
+                <span>{{ match['homeTeam']['name'] }}</span>
+                <span class="vs"> VS </span>
+                <span>{{ match['awayTeam']['name'] }}</span>
+            </div>
+            <p class="match-status">{{ match['status'] }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</section>
           </div>
       </section>
       <div class="team-cards">

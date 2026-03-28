@@ -62,6 +62,26 @@ def fetch_spurs_news():
     else:
         return None
 
+# This function is reponsible for fetching Premier League Table from the API
+def fetch_table_pl():
+
+    #Building the URL to request PL table
+    url = f"https://api.football-data.org/v4/competitions/PL/matches"
+    headers = {"X-Auth-Token": API_KEY}
+    params = {
+        "status": "SCHEDULED"
+    }
+    response = requests.get(url, headers=headers, params=params)
+    # If the request is successful (status 200), return the data as JSON
+    if response.status_code == 200:
+        data = response.json()
+        matches = data.get('matches', [])
+        return matches[:5]
+     # If something goes wrong, return None so we can handle the error elsewhere
+    else:
+        return None
+
+
 # This route handles GET requests to /spurs and returns the match data as JSON    
 @app.route('/spurs', methods=['GET'])
 def get_spurs():
@@ -80,7 +100,8 @@ def index():
     # Passing data to HTML template
     matches = fetch_news() or []
     articles = fetch_spurs_news() or []
-    return render_template('spurs_news.html', matches=matches, articles=articles)
+    premier_league = fetch_table_pl() or []
+    return render_template('spurs_news.html', matches=matches, articles=articles, premier_league=premier_league)
 
 # This route loads the homepage into App
 @app.route('/static/service_worker.js')

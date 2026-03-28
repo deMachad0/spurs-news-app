@@ -172,3 +172,22 @@ body{
         width: 100%;
     }
 }
+
+.premier-section {
+    width: 85%;
+    margin: 40px auto;
+}
+
+.premier-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.premier-card {
+    background-color: #060721;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+}
