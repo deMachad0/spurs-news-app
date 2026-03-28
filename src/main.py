@@ -63,7 +63,7 @@ def fetch_spurs_news():
         return None
 
 # This function is reponsible for fetching Premier League Table from the API
-def fetch_table_pl():
+def fetch_premier_league():
 
     #Building the URL to request PL table
     url = f"https://api.football-data.org/v4/competitions/PL/matches"
@@ -100,7 +100,7 @@ def index():
     # Passing data to HTML template
     matches = fetch_news() or []
     articles = fetch_spurs_news() or []
-    premier_league = fetch_table_pl() or []
+    premier_league = fetch_premier_league() or []
     return render_template('spurs_news.html', matches=matches, articles=articles, premier_league=premier_league)
 
 # This route loads the homepage into App
