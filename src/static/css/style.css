@@ -180,14 +180,48 @@ body{
 
 .premier-container {
     display: flex;
-    flex-direction: column;
-    gap: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
 }
 
 .premier-card {
     background-color: #060721;
-    border-radius: 15px;
-    padding: 20px;
-    text-align: center;
+    border-radius: 10px;
+    padding: 10px 15px;
     color: #fff;
+    width: calc(50% - 10px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px
+}
+
+.premier-card .match-date {
+    color: #426385;
+    font-size: 12px;
+    min-width: 80px;
+}
+
+.premier-card .match-teams {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    flex: 1;
+}
+
+.premier-card .match-status {
+    color: #426385;
+    font-size: 11px;
+    min-width: 70px;
+    text-align: right;
+}
+
+@media screen and (max-width: 768px) {
+    .premier-card {
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+    }
 }

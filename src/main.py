@@ -76,7 +76,7 @@ def fetch_premier_league():
     if response.status_code == 200:
         data = response.json()
         matches = data.get('matches', [])
-        return matches[:5]
+        return matches[:10]
      # If something goes wrong, return None so we can handle the error elsewhere
     else:
         return None
