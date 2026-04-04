@@ -225,3 +225,82 @@ body{
         text-align: center;
     }
 }
+
+.table-section {
+    width: 85%;
+    margin: 40px auto;
+}
+
+.league-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #fff;
+    font-size: 14px;
+}
+
+.league-table thead {
+    background-color: #060721;
+    color: #426385;
+}
+
+.league-table th {
+    padding: 10px;
+    text-align: center;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.league-table td {
+    padding: 8px 10px;
+    text-align: center;
+    border: 1px solid #0d0f2b;
+}
+
+.league-table tr:hover {
+    background-color: #0d0f2b;
+}
+
+.spurs-row {
+    background-color: #132240;
+    font-weight: bold;
+}
+
+.hidden-row {
+    display: none
+}
+
+.visible-row {
+    display: table-row;
+}
+
+.table-toggle {
+    text-align: center;
+    margin-top: 15px;
+}
+
+#toggle-btn {
+    background-color: #060721;
+    color: #426385;
+    border: 1px solid #426385;
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+#toggle-btn:hover {
+    background-color: #426385;
+    color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+    .league-table {
+        font-size: 12px;
+    }
+
+    .league-table th,
+    .league-table td {
+        padding: 6px 5px;
+    }
+}
