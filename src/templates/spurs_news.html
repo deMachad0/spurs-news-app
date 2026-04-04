@@ -74,7 +74,6 @@
           </div>
           {% endfor %}
           <div class="team-title">
-            <div class="team-title">
               <h1>Premier League Table</h1>
             </div>
             <section class="table-section">
@@ -112,7 +111,7 @@
 
             <script>
               function toggleTable() {
-                const hiddenRows = doccument.querySelectorAll('.hidden-row');
+                const hiddenRows = document.querySelectorAll('.hidden-row');
                 const btn = document.getElementById('toggle-btn');
                 hiddenRows.forEach(row => {
                   row.classList.toggle('visible-row');
