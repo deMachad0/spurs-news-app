@@ -117,7 +117,7 @@ def index():
     articles = fetch_spurs_news() or []
     premier_league = fetch_premier_league() or []
     table = fetch_premier_league_table() or []
-    return render_template('spurs_news.html', matches=matches, articles=articles, premier_league=premier_league, table)
+    return render_template('spurs_news.html', matches=matches, articles=articles, premier_league=premier_league, table=table)
 
 # This route loads the homepage into App
 @app.route('/static/service_worker.js')
